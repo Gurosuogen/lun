@@ -1,15 +1,14 @@
 <script lang="ts">
-import { inject, Ref } from 'vue';
-
+import { inject, Ref } from 'vue'
 export default {
     setup() {
-        const menuVisible = inject<Ref<boolean>>('menuVisible') //get
+        const menuVisible = inject<Ref<boolean>>('menuVisible') // get
         const toggleMenu = () => {
-            menuVisible!.value = !menuVisible?.value
+            menuVisible.value = !menuVisible.value
         }
-        return {toggleMenu}
+        return { toggleMenu }
     }
-};
+}
 </script>
 
 <template>
@@ -19,6 +18,7 @@ export default {
             <li>menu1</li>
             <li>menu2</li>
         </ul>
+        <span class="toggleMenu"></span>
     </div>
 </template>
 
@@ -29,6 +29,9 @@ export default {
     padding: 16px;
     position: relative;
     z-index: 10;
+    justify-content: center;
+    align-items: center;
+
     >.logo {
         max-width: 6em;
         margin-right: auto;
@@ -41,6 +44,16 @@ export default {
 
         >li {
             margin: 0 1em;
+        }
+    }
+
+    >.toggleMenu {
+        >.menu {
+            display: none;
+        }
+
+        >.logo {
+            margin: 0 auto;
         }
     }
 }
