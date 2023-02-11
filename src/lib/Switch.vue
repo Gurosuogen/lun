@@ -1,12 +1,11 @@
 <script>
-import Switch from '../lib/Switch.vue'
 export default {
-    components: { Switch }
+    
 };
 </script>
 
 <template>
-    <Switch/>
+    <h1>1111111111111111</h1>
 </template>
 
 <style lang="scss" scoped>
