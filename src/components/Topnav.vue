@@ -2,9 +2,9 @@
 import { inject, Ref } from 'vue'
 export default {
     setup() {
-        const menuVisible = inject<Ref<boolean>>('menuVisible') // get
+        const menuVisible = inject<Ref<boolean>>("menuVisible") // get
         const toggleMenu = () => {
-            menuVisible.value = !menuVisible.value
+            menuVisible!.value = !menuVisible!.value
         }
         return { toggleMenu }
     }
@@ -18,7 +18,7 @@ export default {
             <li>menu1</li>
             <li>menu2</li>
         </ul>
-        <span class="toggleMenu"></span>
+        <span class="toggleAside" @click="toggleMenu"></span>
     </div>
 </template>
 
@@ -48,7 +48,7 @@ export default {
     }
 
     >.toggleAside {
-        display: inline-block;
+        display: none;
         width: 24px;
         height: 24px;
         background: red;
@@ -59,12 +59,15 @@ export default {
     }
 
     @media(max-width:500px) {
-        >.menu {
+        > .menu {
             display: none;
         }
 
-        >.logo {
+        > .logo {
             margin: 0 auto;
+        }
+        > .toggleAside {
+            display: inline-block;
         }
     }
 }
