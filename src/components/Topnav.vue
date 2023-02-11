@@ -27,10 +27,13 @@ export default {
     background: pink;
     display: flex;
     padding: 16px;
-    position: relative;
     z-index: 10;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 
     >.logo {
         max-width: 6em;
@@ -59,14 +62,15 @@ export default {
     }
 
     @media(max-width:500px) {
-        > .menu {
+        >.menu {
             display: none;
         }
 
-        > .logo {
+        >.logo {
             margin: 0 auto;
         }
-        > .toggleAside {
+
+        >.toggleAside {
             display: inline-block;
         }
     }
