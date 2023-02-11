@@ -1,7 +1,12 @@
 <script lang="ts">
 import Topnav from '../components/Topnav.vue';
+import { inject, Ref } from 'vue';
 export default {
-    components: { Topnav }
+    components: { Topnav },
+    setup() {
+        const menuVisible = inject<Ref<boolean>>('menuVisible') //get
+        return { menuVisible }
+    }
 }
 </script>
 
@@ -9,7 +14,7 @@ export default {
     <div>
         <Topnav />
         <div class="content">
-            <aside>
+            <aside v-if="menuVisible">
                 <h2></h2>
                 <ol>
                     <li>
