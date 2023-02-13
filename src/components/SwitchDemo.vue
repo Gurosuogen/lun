@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-    <Switch :value="y" @input="y = $event"/>
+    <Switch v-model:value="y"/>
 </template>
 
 <style lang="scss" scoped>
