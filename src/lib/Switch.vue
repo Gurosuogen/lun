@@ -2,9 +2,9 @@
 import { ref } from 'vue';
 export default {
     props: {
-        value:Boolean
+        value: Boolean
     },
-    setup(props,context) {
+    setup(props, context) {
         const toggle = () => {
             context.emit('update:value', !props.value)
         }
@@ -14,7 +14,9 @@ export default {
 </script>
 
 <template>
-    <button @click="toggle" :class={checked:value}> <span></span> </button>
+    <button @click="toggle" :class={checked:value}>
+        <span></span>
+    </button>
 </template>
 
 <style lang="scss" scoped>
@@ -28,32 +30,41 @@ button {
     background: #bfbfbf;
     border-radius: calc($h / 2);
     position: relative;
-}
 
-span {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    height: $h2;
-    width: $h2;
-    background: white;
-    border-radius: calc($h2 / 2);
-    transition: all 250ms;
-}
-
-button.checked {
-    background: #1890ff;
     >span {
-        left: calc(100% - #{$h2} - 2px)
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        height: $h2;
+        width: $h2;
+        background: white;
+        border-radius: calc($h2 / 2);
+        transition: all 250ms;
     }
-}
-button:focus {
-    outline: none;
-}
-button:active {
-    > span {width: calc($h2 + 4px);}
-}
-button.checked:active {
-    > span { width: calc($h2 + 4px); margin-left: -4px; }
+
+    &.checked {
+        background: #1890ff;
+
+        >span {
+            left: calc(100% - #{$h2} - 2px)
+        }
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        >span {
+            width: calc($h2 + 4px);
+        }
+    }
+
+    &.checked:active {
+        > span {
+            width: calc($h2 + 4px);
+            margin-left: -4px;
+        }
+    }
 }
 </style>
