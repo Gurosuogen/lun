@@ -2,10 +2,10 @@
     <div>Button 示例</div>
     <h1>示例1</h1>
     <div>
-        <button @click="onClick"
-                @focus="onClick"
-                @mouseover="onClick"
-                >hello!</button>
+        <button>hello!</button>
+        <button theme="button">hello!</button>
+        <button theme="link">hello!</button>
+        <button theme="text">hello!</button>
     </div>
 </template>
 
