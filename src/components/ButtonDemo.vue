@@ -7,6 +7,12 @@
         <Button theme="link">hello!</Button>
         <Button theme="text">hello!</Button>
     </div>
+    <h1>示例2</h1>
+    <div>
+        <Button size="big">It's so big!</Button>
+        <Button>just normal.</Button>
+        <Button size="small">tiny!</Button>
+    </div>
 </template>
 
 <script lang="ts">
