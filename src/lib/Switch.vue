@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-    <button class="gulu-switch" @click="toggle" :class={'gulu-checked':value}>
+    <button class="gulu-switch" @click="toggle" :class="{'gulu-checked':value}">
         <span></span>
     </button>
 </template>
