@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import Switch from '../lib/Switch.vue'
 import { ref } from 'vue';
 export default {
@@ -7,12 +7,11 @@ export default {
         const bool = ref(false)
         return { bool }
     }
-};
+}
 </script>
 
 <template>
-    <Switch v-model:value="bool"/>
+    <div>
+        <Switch v-model:value="bool" />
+    </div>
 </template>
-
-<style lang="scss" scoped>
-</style>

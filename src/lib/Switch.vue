@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
 import { ref } from 'vue';
 export default {
     props: {
-        value: Boolean
+        value: Boolean,
     },
     setup(props, context) {
         const toggle = () => {
@@ -21,9 +21,9 @@ export default {
 
 <style lang="scss">
 $h: 22px;
-$h2: $h - 4px;
+$h2: calc($h - 4px);
 
-.gulu-button {
+.gulu-switch {
     height: $h;
     width: calc($h * 2);
     border: none;
@@ -61,7 +61,7 @@ $h2: $h - 4px;
     }
 
     &.gulu-checked:active {
-        > span {
+        >span {
             width: calc($h2 + 4px);
             margin-left: -4px;
         }

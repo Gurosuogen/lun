@@ -2,10 +2,10 @@
     <div>Button 示例</div>
     <h1>示例1</h1>
     <div>
-        <button>hello!</button>
-        <button theme="button">hello!</button>
-        <button theme="link">hello!</button>
-        <button theme="text">hello!</button>
+        <Button>hello!</Button>
+        <Button theme="button">hello!</Button>
+        <Button theme="link">hello!</Button>
+        <Button theme="text">hello!</Button>
     </div>
 </template>
 
