@@ -2,7 +2,7 @@
     <div>Button 示例</div>
     <h1>theme示例</h1>
     <div>
-        <Button>hello!</Button>
+        <Button @click="onClick">hello!</Button>
         <Button theme="button">hello!</Button>
         <Button theme="link">hello!</Button>
         <Button theme="text">hello!</Button>
@@ -45,6 +45,9 @@
             <Button theme="link" disabled>禁用链接按钮</Button>
             <Button theme="text" disabled>禁用按钮</Button>
         </div>
+        <h1>loading示例</h1>
+        <Button loading>Loading</Button>
+        <Button>Finish</Button>
 </template>
 
 <script lang="ts">
