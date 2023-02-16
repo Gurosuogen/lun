@@ -1,7 +1,6 @@
 <script lang="ts">
 import { computed } from 'vue';
 export default {
-    inheritAttrs: false,
     props: {
         theme: {
             type: String,
@@ -20,7 +19,7 @@ export default {
             default: false
         },
         loading: {
-            type:Boolean,
+            type: Boolean,
             default: false
         }
     },
@@ -43,7 +42,7 @@ export default {
     <button class="gulu-button" :class="classes" :disabled="disabled">
         <span v-if="loading" class="gulu-loadingIndicator"></span>
         <slot />
-    </button>
+</button>
 </template>
 
 <style lang="scss">
@@ -179,22 +178,27 @@ $grey: grey;
             }
         }
     }
+
     &.gulu-theme-button {
         &[disabled] {
             cursor: not-allowed;
             color: $grey;
-            &:hover{
+
+            &:hover {
                 border-color: $grey;
             }
         }
     }
-    &.gulu-theme-link, &.gulu-theme-text {
+
+    &.gulu-theme-link,
+    &.gulu-theme-text {
         &[disabled] {
             cursor: not-allowed;
             color: $grey;
         }
     }
-    > .gulu-loadingIndicator {
+
+    >.gulu-loadingIndicator {
         width: 14px;
         height: 14px;
         display: inline-block;
@@ -206,8 +210,13 @@ $grey: grey;
         animation: gulu-spin 1s infinite linear;
     }
 }
+
 @keyframes gulu-spin {
-    0%{transform: rotate(0deg);}
-    100%{transform: rotate(360deg);}
-}
-</style>
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}</style>
