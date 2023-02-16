@@ -20,7 +20,7 @@ export default {
     },
     setup(props, context) {
         const close = () => {
-            context.emit('update:value', false)
+            context.emit('update:visible', false)
         }
         const onClickOverlay = () => {
             if (props.closeOnClickOverlay) {
@@ -47,12 +47,11 @@ export default {
         <div class="gulu-dialog-wrapper">
             <div class="gulu-dialog">
                 <header>
-                    标题
+                    <slot name="title" />
                     <span @click="close" class="gulu-dialog-close"></span>
                 </header>
                 <main>
-                    <p>第一行字</p>
-                    <p>第二行字</p>
+                    <slot name="content" />
                 </main>
                 <footer>
                     <Button @click="ok" level="main">OK</Button>
@@ -60,8 +59,7 @@ export default {
                 </footer>
             </div>
         </div>
-    </template>
-
+</template>
 </template>
 
 <style lang="scss">
