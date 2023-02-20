@@ -1,3 +1,3 @@
 <template>
-<div>Tab</div>
+    <slot />
 </template>
