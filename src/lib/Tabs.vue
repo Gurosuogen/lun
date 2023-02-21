@@ -9,22 +9,19 @@ export default {
         }
     },
     setup(props, context) {
-        const navItems = ref<HTMLDivElement[]>([])
+        const selectedItem = ref<HTMLDivElement>(null)
         const indicator = ref<HTMLDivElement>(null)
         const container = ref<HTMLDivElement>(null)
         const x = () => {
-            const divs = navItems.value
-            const result = divs.filter(div => div.classList.contains('selected'))[0]
-            const { width } = result.getBoundingClientRect()
+            const { width } = selectedItem.value.getBoundingClientRect()
             indicator.value.style.width = width + 'px'
             const { left: left1 } = container.value.getBoundingClientRect()
-            const { left: left2 } = result.getBoundingClientRect()
+            const { left: left2 } = selectedItem.value.getBoundingClientRect()
             const left = left2 - left1
             indicator.value.style.left = left + 'px'
         }
         onMounted(x)
         onUpdated(x)
-        const firstVallue = 25
         const defaults = context.slots.default!()
         defaults.forEach((tag) => {
             if (tag.type !== Tab) {
@@ -42,15 +39,16 @@ export default {
         const select = (title: string) => {
             context.emit('update:selected', title)
         }
-        return { defaults, titles, current, select, navItems, indicator, container }
+        return { defaults, titles, current, select, selectedItem, indicator, container }
     }
 }
 </script>
 <template>
     <div class="gulu-tabs">
         <div class="gulu-tabs-nav" ref="container">
-            <div class="gulu-tabs-nav-item" v-for="(t, index) in titles" :ref="el => { if (el) navItems[index] = el }"
-                @click="select(t)" :class="{ selected: t === selected }" :key="index">{{ t }}</div>
+            <div class="gulu-tabs-nav-item" v-for="(t, index) in titles"
+                :ref="el => { if (t === selected) selectedItem = el }" @click="select(t)"
+                :class="{ selected: t === selected }" :key="index">{{ t }}</div>
             <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
         </div>
     </div>
