@@ -13,17 +13,24 @@ export default {
 
 <template>
     <div class="topnav">
-        <div class="logo">LOGO</div>
-        <ul class="menu">
-            <li>menu1</li>
-            <li>menu2</li>
-        </ul>
-        <span class="toggleAside" @click="toggleMenu"></span>
+        <div class="logo">
+            <svg class="icon">
+                <use xlink:href="#icon-king"></use>
+            </svg>
+        </div>
     </div>
+    <ul class="menu">
+        <li>menu1</li>
+        <li>menu2</li>
+    </ul>
+    <span class="toggleAside" @click="toggleMenu"></span>
 </template>
 
 <style lang="scss" scoped>
+$color: #007974;
+
 .topnav {
+    color: $color;
     display: flex;
     padding: 16px;
     z-index: 10;
@@ -37,6 +44,11 @@ export default {
     >.logo {
         max-width: 6em;
         margin-right: auto;
+
+        >.logo {
+            width: 32px;
+            height: 32px;
+        }
     }
 
     >.menu {
