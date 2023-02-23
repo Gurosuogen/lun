@@ -20,8 +20,9 @@ export default {
         </div>
     </div>
     <ul class="menu">
-        <li>menu1</li>
-        <li>menu2</li>
+        <li>
+            <router-link to="/doc">文档</router-link>
+        </li>
     </ul>
     <span class="toggleAside" @click="toggleMenu"></span>
 </template>
