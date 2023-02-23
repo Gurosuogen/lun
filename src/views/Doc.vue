@@ -12,10 +12,10 @@ export default {
 
 <template>
     <div class="layout">
-        <Topnav class="nav" />
+        <Topnav toggleMenuButtonVisible class="nav" />
         <div class="content">
             <aside v-if="menuVisible">
-                <h2></h2>
+                <h2>组件列表</h2>
                 <ol>
                     <li>
                         <router-link to="/doc/switch">Switch 组件</router-link>
