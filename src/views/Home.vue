@@ -5,7 +5,7 @@ export default {
 }
 </script>
 <template>
-    <div>
+    <div class="topnavAndBanner">
         <Topnav />
         <div class="banner">
             <h1>LUN UI</h1>
@@ -18,13 +18,17 @@ export default {
     </div>
 </template>
 <style lang="scss" scoped>
+.topnavAndBanner {
+    background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
+}
+
 .banner {
     padding: 100px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: lightgreen;
+
 
     >.actions {
         padding: 8px 0;
