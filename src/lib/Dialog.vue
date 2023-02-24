@@ -60,7 +60,7 @@ export default {
                 </div>
             </div>
         </Teleport>
-</template>
+    </template>
 </template>
 
 <style lang="scss">
