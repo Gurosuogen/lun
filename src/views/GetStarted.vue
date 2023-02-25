@@ -1,5 +1,12 @@
 <template>
-    <article class="markdown-body">
-        <h1>Start</h1>
-    </article>
+    <article class="markdown-body" v-html="md"></article>
 </template>
+
+<script>
+import md from '../markdown/get-started.md'
+export default {
+    data() {
+        return { md }
+    }
+}
+</script>

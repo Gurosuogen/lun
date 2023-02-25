@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@vitejs/plugin-vue': 4.0.0
   github-markdown-css: 5.2.0
+  marked: 1.1.1
   sass: 1.58.0
   typescript: 4.9.3
   vite: 4.1.0
@@ -12,6 +13,7 @@ specifiers:
 
 dependencies:
   github-markdown-css: 5.2.0
+  marked: 1.1.1
   vue: 3.2.45
   vue-router: 4.1.5_vue@3.2.45
 
@@ -595,6 +597,12 @@ packages:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
     dependencies:
       sourcemap-codec: 1.4.8
+
+  /marked/1.1.1:
+    resolution: {integrity: sha512-mJzT8D2yPxoPh7h0UXkB+dBj4FykPJ2OIfxAWeIHrvoHDkFxukV/29QxoFQoPM6RLEwhIFdJpmKBlqVM3s2ZIw==}
+    engines: {node: '>= 8.16.2'}
+    hasBin: true
+    dev: false
 
   /minimatch/5.1.6:
     resolution: {integrity: sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==}
