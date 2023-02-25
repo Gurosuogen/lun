@@ -1,5 +1,5 @@
 <template>
-    <div>
-        开始
-    </div>
+    <article class="markdown-body">
+        <h1>Start</h1>
+    </article>
 </template>
