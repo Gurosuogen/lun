@@ -4,7 +4,11 @@ declare module '*.vue' {
     export default componentOptions
 }
 // declare module '*.md' {
-//     import type { ComponentOptions } from 'vue'
-//     const Component: ComponentOptions
-//     export default Component
+//     const str: string
+//     export default str
 // }
+declare module '*.md' {
+    import type { ComponentOptions } from 'vue'
+    const Component: ComponentOptions
+    export default Component
+}
