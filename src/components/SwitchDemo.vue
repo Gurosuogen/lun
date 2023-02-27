@@ -1,15 +1,16 @@
 <script lang="ts">
-//@ts-nocheck
-import Switch from '../lib/Switch.vue'
-import Button from '../lib/Button.vue';
-import SwitchDemo1 from './Switch1.demo.vue';
-import SwitchDemo2 from './Switch2.demo.vue';
-import { ref } from 'vue';
+import Button from '../lib/Button.vue'
+import SwitchDemo1 from './Switch1.demo.vue'
+import SwitchDemo2 from './Switch2.demo.vue'
+import { ref } from 'vue'
+import 'prismjs';
+import 'prismjs/themes/prism.css'
+const Prism = (window as any).Prism
 export default {
     components: { Button },
     setup() {
         const bool = ref(false)
-        return { bool, SwitchDemo1, SwitchDemo2 }
+        return { bool, SwitchDemo1, SwitchDemo2, Prism }
     }
 }
 </script>
@@ -26,7 +27,8 @@ export default {
                 <Button>查看代码</Button>
             </div>
             <div class="demo-code">
-                <pre>{{ SwitchDemo1.__sourceCode }}</pre>
+                <pre class="language-html"
+                    v-html="Prism.highlight(SwitchDemo1.__sourceCode, Prism.languages.html, 'html')" />
             </div>
         </div>
         <div class="demo">
@@ -38,7 +40,8 @@ export default {
                 <Button>查看代码</Button>
             </div>
             <div class="demo-code">
-                <pre>{{ SwitchDemo2.__sourceCode }}</pre>
+                <pre class="language-html"
+                    v-html="Prism.highlight(SwitchDemo2.__sourceCode, Prism.languages.html, 'html')" />
             </div>
         </div>
     </div>
