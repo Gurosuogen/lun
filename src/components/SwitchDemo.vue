@@ -1,14 +1,15 @@
 <script lang="ts">
+//@ts-nocheck
 import Switch from '../lib/Switch.vue'
 import Button from '../lib/Button.vue';
-import SwitchDemo1 from './SwitchDemo1.vue';
-import SwitchDemo2 from './SwitchDemo2.vue';
+import SwitchDemo1 from './Switch1.demo.vue';
+import SwitchDemo2 from './Switch2.demo.vue';
 import { ref } from 'vue';
 export default {
-    components: { Switch, Button, SwitchDemo1, SwitchDemo2 },
+    components: { Button },
     setup() {
         const bool = ref(false)
-        return { bool }
+        return { bool, SwitchDemo1, SwitchDemo2 }
     }
 }
 </script>
@@ -19,25 +20,25 @@ export default {
         <div class="demo">
             <h2>常规用法</h2>
             <div class="demo-component">
-                <SwitchDemo1 />
+                <component :is="SwitchDemo1" />
             </div>
             <div class="demo-actions">
                 <Button>查看代码</Button>
             </div>
             <div class="demo-code">
-                <pre></pre>
+                <pre>{{ SwitchDemo1.__sourceCode }}</pre>
             </div>
         </div>
         <div class="demo">
             <h2>支持 disabled</h2>
             <div class="demo-component">
-                <SwitchDemo2 />
+                <component :is="SwitchDemo2" />
             </div>
             <div class="demo-actions">
                 <Button>查看代码</Button>
             </div>
             <div class="demo-code">
-                <pre></pre>
+                <pre>{{ SwitchDemo2.__sourceCode }}</pre>
             </div>
         </div>
     </div>
