@@ -55,7 +55,7 @@ $color: #007974;
 }
 
 .features {
-    margin: 64 auto;
+    margin: 64px auto;
     padding: 0 16px;
 
     @media (min-width: 800px) {
@@ -125,7 +125,7 @@ $color: #007974;
         padding: 8px 0;
 
         a {
-            margin: 0;
+            margin: 0 8px;
             background: $green;
             color: white;
             display: inline-block;
